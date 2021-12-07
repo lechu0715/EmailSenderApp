@@ -1,4 +1,5 @@
 ﻿using EmailSenderApp.Models.Domains;
+using EmailSenderApp.Models.Repositories;
 using EmailSenderApp.Models.ViewModels;
 using Microsoft.AspNet.Identity;
 using System;
@@ -15,6 +16,7 @@ namespace EmailSenderApp.Controllers
     [Authorize]
     public class HomeController : Controller
     {
+        EmailRepository _emailRepository = new EmailRepository();
 
         public ActionResult Index()
         {
@@ -37,11 +39,16 @@ namespace EmailSenderApp.Controllers
             return View(vm);
         }
 
-        /*[HttpPost]
-        public async Task<ActionResult> SendEmail()
+        [HttpPost]
+        public async Task<ActionResult> SendEmail(EmailModel emailModel)
         {
+            var userId = User.Identity.GetUserId();
+            emailModel.UserId = userId;
 
-        }*/
+            await _emailRepository.SendMessage(emailModel);
+
+            return View();
+        }
 
         [AllowAnonymous]
         public ActionResult About()
