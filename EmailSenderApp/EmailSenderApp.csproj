@@ -176,6 +176,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112051958379_InitialCreate.cs" />
+    <Compile Include="Migrations\202112051958379_InitialCreate.designer.cs">
+      <DependentUpon>202112051958379_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112071607157_Init.cs" />
+    <Compile Include="Migrations\202112071607157_Init.designer.cs">
+      <DependentUpon>202112071607157_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Domains\EmailModel.cs" />
     <Compile Include="Models\ViewModels\AddPhoneNumberViewModel.cs" />
     <Compile Include="Models\Domains\ApplicationUser.cs" />
@@ -275,6 +284,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -308,6 +318,14 @@
       <Project>{0ccbbe93-ae5d-4c0d-aefd-d664b80d903a}</Project>
       <Name>EmailSenderRe</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202112051958379_InitialCreate.resx">
+      <DependentUpon>202112051958379_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112071607157_Init.resx">
+      <DependentUpon>202112071607157_Init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
