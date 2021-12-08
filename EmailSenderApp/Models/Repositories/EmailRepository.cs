@@ -18,7 +18,7 @@ namespace EmailSenderApp.Models.Repositories
                 EnableSsl = true,
                 Port = 587,
                 SenderEmail = $"{emailModel.From}",
-                SenderEmailPassword = "uskkwanygpbmkkrx",
+                SenderEmailPassword = "uskkwanygpmbkkrx",
                 SenderName = $"{emailModel.From}"
             };
 
