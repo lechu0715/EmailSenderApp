@@ -12,7 +12,7 @@ namespace EmailSenderApp.Models.Domains
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Pole Tytuł jest wymagane")]
         [Display(Name = "Tytuł")]
         public string Title { get; set; }
 

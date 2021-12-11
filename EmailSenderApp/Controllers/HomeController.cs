@@ -17,6 +17,7 @@ namespace EmailSenderApp.Controllers
     public class HomeController : Controller
     {
         EmailRepository _emailRepository = new EmailRepository();
+        Repository _repository = new Repository();
 
         public ActionResult Index()
         {
@@ -42,10 +43,11 @@ namespace EmailSenderApp.Controllers
         [HttpPost]
         public async Task<ActionResult> SendEmail(EmailModel emailModel)
         {
-            var userId = User.Identity.GetUserId();
-            emailModel.UserId = userId;
+            emailModel.UserId = User.Identity.GetUserId();
 
             await _emailRepository.SendMessage(emailModel);
+
+            _repository.AddEmail(emailModel);
 
             return View();
         }
