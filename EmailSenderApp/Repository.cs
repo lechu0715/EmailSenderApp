@@ -18,5 +18,16 @@ namespace EmailSenderApp
                 context.SaveChanges();
             }
         }
+
+        public string TakeApplicationPassword(string id)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                var applicationPassword = context.Users.Where(x => x.Id == id)
+                    .Select(x => x.ApplicationPassword);
+
+                return applicationPassword.Single();
+            }
+        }
     }
 }

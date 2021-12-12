@@ -10,6 +10,8 @@ namespace EmailSenderApp.Models.Repositories
 {
     public class EmailRepository
     {
+        Repository _repository = new Repository();
+
         public async Task SendMessage(EmailModel emailModel)
         {
             EmailParams emailParams = new EmailParams()
@@ -18,7 +20,7 @@ namespace EmailSenderApp.Models.Repositories
                 EnableSsl = true,
                 Port = 587,
                 SenderEmail = $"{emailModel.From}",
-                SenderEmailPassword = "uskkwanygpmbkkrx",
+                SenderEmailPassword = _repository.TakeApplicationPassword(emailModel.UserId),
                 SenderName = $"{emailModel.From}"
             };
 

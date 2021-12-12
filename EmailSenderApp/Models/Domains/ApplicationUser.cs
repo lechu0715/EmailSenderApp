@@ -15,6 +15,9 @@ namespace EmailSenderApp.Models
         {
             EmailModels = new Collection<EmailModel>();
         }
+
+        public string ApplicationPassword { get; set; }
+
         public ICollection<EmailModel> EmailModels { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)

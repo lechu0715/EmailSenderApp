@@ -180,6 +180,10 @@
     <Compile Include="Migrations\202112092042146_Init.designer.cs">
       <DependentUpon>202112092042146_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112112256078_AddApplicationPassword.cs" />
+    <Compile Include="Migrations\202112112256078_AddApplicationPassword.designer.cs">
+      <DependentUpon>202112112256078_AddApplicationPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Domains\EmailModel.cs" />
     <Compile Include="Models\Repositories\EmailRepository.cs" />
@@ -320,6 +324,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202112092042146_Init.resx">
       <DependentUpon>202112092042146_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112112256078_AddApplicationPassword.resx">
+      <DependentUpon>202112112256078_AddApplicationPassword.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
