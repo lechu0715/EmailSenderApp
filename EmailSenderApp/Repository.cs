@@ -19,11 +19,11 @@ namespace EmailSenderApp
             }
         }
 
-        public string TakeApplicationPassword(string id)
+        public string TakeApplicationPassword(string UserId)
         {
             using (var context = new ApplicationDbContext())
             {
-                var applicationPassword = context.Users.Where(x => x.Id == id)
+                var applicationPassword = context.Users.Where(x => x.Id == UserId)
                     .Select(x => x.ApplicationPassword);
 
                 return applicationPassword.Single();
